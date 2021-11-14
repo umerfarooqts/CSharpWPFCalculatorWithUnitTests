@@ -1,0 +1,78 @@
+﻿<Window x:Class="The_Calculator_App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:The_Calculator_App"
+        mc:Ignorable="d"
+        Title="The Calculator Application" Height="525" Width="350">
+    <!-- This is a test Application code to test out some of the features.
+    <Grid>
+        <Border x:Name="debugPanel" Background="#C7C7C7" CornerRadius="10" BorderBrush="Black" BorderThickness="2" Grid.Row="5" Grid.Column="6" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Width="500" >
+                
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0" >
+                    <Label Content="Value 1" Width="100"/>
+                    <TextBox Text="10" Width="100"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                    <Label Content="Value 2" Width="100"/>
+                    <TextBox Text="10" Width="100"/>
+                </StackPanel>
+                <Button Content="Calculate" Width="200" Margin="0,10,0,0"/>
+
+                <Label Content="Result" HorizontalAlignment="Center" FontWeight="Bold" FontSize="18" />
+            </StackPanel>
+        </Border>
+    </Grid>-->
+
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/> <!--By default, It it means 1 star which uses the all the available space-->
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="lblResult" Content="0" Grid.ColumnSpan="4" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="70"/>
+        
+        <!--This is the first Row in the Grid-->
+        <Button x:Name="lblAC" Content="AC" Grid.Row="1" Margin="5"/>
+        <Button x:Name="lblNegative" Content="+/-" Grid.Row="1" Grid.Column="1" Margin="5"/>
+        <Button x:Name="lblPercent" Content="%" Grid.Row="1" Grid.Column="2" Margin="5"/>
+        <Button x:Name="lblDivide"   Click="LblOperatorButton_OnClick" Content="/" Grid.Row="1" Grid.Column="3" Margin="5"/>
+
+        <!--This is the Second Row in the Grid-->
+        <Button x:Name="lbl7"        Click="LblNumberButton_OnClick" Content="7" Grid.Row="2" Margin="5"/>
+        <Button x:Name="lbl8"        Click="LblNumberButton_OnClick" Content="8" Grid.Row="2" Grid.Column="1" Margin="5"/>
+        <Button x:Name="lbl9"        Click="LblNumberButton_OnClick" Content="9" Grid.Row="2" Grid.Column="2" Margin="5"/>
+        <Button x:Name="lblMultiply" Click="LblOperatorButton_OnClick" Content="*" Grid.Row="2" Grid.Column="3" Margin="5"/>
+
+        <!--This is the Third Row in the Grid-->
+        <Button x:Name="lbl4"         Click="LblNumberButton_OnClick" Content="4" Grid.Row="3" Margin="5"/>
+        <Button x:Name="lbl5"         Click="LblNumberButton_OnClick" Content="5" Grid.Row="3" Grid.Column="1" Margin="5"/>
+        <Button x:Name="lbl6"         Click="LblNumberButton_OnClick" Content="6" Grid.Row="3" Grid.Column="2" Margin="5"/>
+        <Button x:Name="lblSubtract"  Click="LblOperatorButton_OnClick" Content="-" Grid.Row="3" Grid.Column="3" Margin="5"/>
+
+        <!--This is the Forth Row in the Grid-->
+        <Button x:Name="lbl1"   Click="LblNumberButton_OnClick" Content="1" Grid.Row="4" Margin="5"/>
+        <Button x:Name="lbl2"   Click="LblNumberButton_OnClick" Content="2" Grid.Row="4" Grid.Column="1" Margin="5"/>
+        <Button x:Name="lbl3"   Click="LblNumberButton_OnClick" Content="3" Grid.Row="4" Grid.Column="2" Margin="5"/>
+        <Button x:Name="lblAdd" Click="LblOperatorButton_OnClick" Content="+" Grid.Row="4" Grid.Column="3" Margin="5"/>
+
+        <!--This is the Fifth Row in the Grid-->
+        <Button x:Name="lbl0"   Click="LblNumberButton_OnClick" Content="0" Grid.Row="5" Grid.ColumnSpan="2" Margin="5"/>
+        <Button x:Name="lblDot" Click="LblDot_OnClick"   Content="." Grid.Row="5" Grid.Column="2" Margin="5"/>
+        <Button x:Name="lblEqual" Content="=" Grid.Row="5" Grid.Column="3" Margin="5"/>
+    </Grid>
+</Window>

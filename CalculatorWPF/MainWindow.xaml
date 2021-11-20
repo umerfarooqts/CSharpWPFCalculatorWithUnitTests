@@ -27,6 +27,12 @@
         </Border>
     </Grid>-->
 
+    <!--Static Resources | Moved to App.xaml-->
+    <!--<Window.Resources>
+        <SolidColorBrush x:Key="numbersColor" Color="#444444"/>
+        <SolidColorBrush x:Key="operatorsColor" Color="Orange"/>
+    </Window.Resources>-->
+
     <Grid Margin="20">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/> <!--By default, It it means 1 star which uses the all the available space-->
@@ -47,32 +53,32 @@
         <Label x:Name="lblResult" Content="0" Grid.ColumnSpan="4" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="70"/>
         
         <!--This is the first Row in the Grid-->
-        <Button x:Name="lblAC" Content="AC" Grid.Row="1" Margin="5"/>
-        <Button x:Name="lblNegative" Content="+/-" Grid.Row="1" Grid.Column="1" Margin="5"/>
-        <Button x:Name="lblPercent" Content="%" Grid.Row="1" Grid.Column="2" Margin="5"/>
-        <Button x:Name="lblDivide"   Click="LblOperatorButton_OnClick" Content="/" Grid.Row="1" Grid.Column="3" Margin="5"/>
+        <Button x:Name="lblAC" Background="{StaticResource operatorsColor}"  Foreground="Black" Content="AC" Grid.Row="1"  />
+        <Button x:Name="lblNegative" Background="{StaticResource operatorsColor}"  Foreground="Black" Content="+/-" Grid.Row="1" Grid.Column="1"  />
+        <Button x:Name="lblPercent"  Background="{StaticResource operatorsColor}"  Foreground="Black" Content="%" Grid.Row="1" Grid.Column="2"  />
+        <Button x:Name="lblDivide"   Background="{StaticResource operatorsColor}"  Click="LblOperatorButton_OnClick" Content="/" Grid.Row="1" Grid.Column="3"  />
 
-        <!--This is the Second Row in the Grid-->
-        <Button x:Name="lbl7"        Click="LblNumberButton_OnClick" Content="7" Grid.Row="2" Margin="5"/>
-        <Button x:Name="lbl8"        Click="LblNumberButton_OnClick" Content="8" Grid.Row="2" Grid.Column="1" Margin="5"/>
-        <Button x:Name="lbl9"        Click="LblNumberButton_OnClick" Content="9" Grid.Row="2" Grid.Column="2" Margin="5"/>
-        <Button x:Name="lblMultiply" Click="LblOperatorButton_OnClick" Content="*" Grid.Row="2" Grid.Column="3" Margin="5"/>
+        <!--This is the Second Row in the Grid - Using Explicit Styling-->
+        <Button x:Name="lbl7"  Background="{StaticResource numbersColor}"      Click="LblNumberButton_OnClick" Content="7" Grid.Row="2"  />
+        <Button x:Name="lbl8"        Style="{StaticResource NumberButtonsStyle}"  Click="LblNumberButton_OnClick"   Content="8" Grid.Row="2" Grid.Column="1"  />
+        <Button x:Name="lbl9"        Style="{StaticResource NumberButtonsStyle}"  Click="LblNumberButton_OnClick" Content="9" Grid.Row="2" Grid.Column="2"  />
+        <Button x:Name="lblMultiply" Style="{StaticResource OperatorButtonsStyle}"  Click="LblOperatorButton_OnClick" Content="*" Grid.Row="2" Grid.Column="3"  />
 
         <!--This is the Third Row in the Grid-->
-        <Button x:Name="lbl4"         Click="LblNumberButton_OnClick" Content="4" Grid.Row="3" Margin="5"/>
-        <Button x:Name="lbl5"         Click="LblNumberButton_OnClick" Content="5" Grid.Row="3" Grid.Column="1" Margin="5"/>
-        <Button x:Name="lbl6"         Click="LblNumberButton_OnClick" Content="6" Grid.Row="3" Grid.Column="2" Margin="5"/>
-        <Button x:Name="lblSubtract"  Click="LblOperatorButton_OnClick" Content="-" Grid.Row="3" Grid.Column="3" Margin="5"/>
+        <Button x:Name="lbl4" Background="{StaticResource numbersColor}"         Click="LblNumberButton_OnClick" Content="4" Grid.Row="3"  />
+        <Button x:Name="lbl5"         Background="{StaticResource numbersColor}"  Click="LblNumberButton_OnClick" Content="5" Grid.Row="3" Grid.Column="1"  />
+        <Button x:Name="lbl6"         Background="{StaticResource numbersColor}"  Click="LblNumberButton_OnClick" Content="6" Grid.Row="3" Grid.Column="2"  />
+        <Button x:Name="lblSubtract"  Background="{StaticResource operatorsColor}"  Click="LblOperatorButton_OnClick" Content="-" Grid.Row="3" Grid.Column="3"  />
 
         <!--This is the Forth Row in the Grid-->
-        <Button x:Name="lbl1"   Click="LblNumberButton_OnClick" Content="1" Grid.Row="4" Margin="5"/>
-        <Button x:Name="lbl2"   Click="LblNumberButton_OnClick" Content="2" Grid.Row="4" Grid.Column="1" Margin="5"/>
-        <Button x:Name="lbl3"   Click="LblNumberButton_OnClick" Content="3" Grid.Row="4" Grid.Column="2" Margin="5"/>
-        <Button x:Name="lblAdd" Click="LblOperatorButton_OnClick" Content="+" Grid.Row="4" Grid.Column="3" Margin="5"/>
+        <Button x:Name="lbl1"  Background="{StaticResource numbersColor}"   Click="LblNumberButton_OnClick" Content="1" Grid.Row="4"  />
+        <Button x:Name="lbl2"   Background="{StaticResource numbersColor}"  Click="LblNumberButton_OnClick" Content="2" Grid.Row="4" Grid.Column="1"  />
+        <Button x:Name="lbl3"   Background="{StaticResource numbersColor}"  Click="LblNumberButton_OnClick" Content="3" Grid.Row="4" Grid.Column="2"  />
+        <Button x:Name="lblAdd" Background="{StaticResource operatorsColor}"  Click="LblOperatorButton_OnClick" Content="+" Grid.Row="4" Grid.Column="3"  />
 
         <!--This is the Fifth Row in the Grid-->
-        <Button x:Name="lbl0"   Click="LblNumberButton_OnClick" Content="0" Grid.Row="5" Grid.ColumnSpan="2" Margin="5"/>
-        <Button x:Name="lblDot" Click="LblDot_OnClick"   Content="." Grid.Row="5" Grid.Column="2" Margin="5"/>
-        <Button x:Name="lblEqual" Content="=" Grid.Row="5" Grid.Column="3" Margin="5"/>
+        <Button x:Name="lbl0"   Background="{StaticResource numbersColor}" Click="LblNumberButton_OnClick" Content="0" Grid.Row="5" Grid.ColumnSpan="2"  />
+        <Button x:Name="lblDot" Background="{StaticResource numbersColor}"   Click="LblDot_OnClick"   Content="." Grid.Row="5" Grid.Column="2"  />
+        <Button x:Name="lblEqual" Background="{StaticResource operatorsColor}"  Content="=" Grid.Row="5" Grid.Column="3"  />
     </Grid>
 </Window>
